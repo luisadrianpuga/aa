@@ -16,6 +16,10 @@ export const headerData = {
         href: getPermalink('/#steps'),
       },
       {
+        text: 'Nuestro Equipo',
+        href: getPermalink('/landing/saas'),
+      },
+      {
         text: 'Contáctenos',
         href: getPermalink('/landing/startup'),
       },
