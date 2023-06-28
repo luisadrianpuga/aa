@@ -1,15 +1,15 @@
 import defaultImage from './assets/images/default.png';
 
 const CONFIG = {
-  name: 'AstroWind',
+  name: 'Asesoria Americana',
 
   origin: 'https://astrowind.vercel.app',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'AstroWind — Free template for create a website with Astro + Tailwind CSS',
+  title: 'Asesoria Americana Taxline Services – Simplemente tu Asesoria',
   description:
-    '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+    'Asesoria Americana Taxline Services – Simplemente tu Asesoria',
   defaultImage: defaultImage,
 
   defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"

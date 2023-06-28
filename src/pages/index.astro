@@ -1,7 +1,7 @@
 ---
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
-
+import { getPermalink, getBlogPermalink, getAsset } from '~/utils/permalinks.ts';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -24,21 +24,23 @@ const meta = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
-    callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }}
+    callToAction={{ text: 'Recibe una Consulta Personalizada', href: getPermalink('/landing/startup'), icon: 'tabler:chevron-right' }}
+    callToAction2={{ text: 'Más información', href: '#features' }}
+    
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 2.0</span> + Tailwind CSS    </Fragment>
+      Experiencia y Profesionalismo para Resolver tus</span>
+      <span class="text-accent dark:text-white highlight"> Impuestos</span>  y Negocios    </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0 +
-        Tailwind CSS.</span
+        <span class="font-semibold">Expertos</span> en Impuestos y Servicios Empresariales que te Brindan Soluciones Efectivas</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups,
-      Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.
+      
+    </Fragment>
+
+    <Fragment slot="image">
+      <iframe width="560" height="600" src="https://www.youtube.com/embed/r_JIXAtNx1o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%"></iframe>
     </Fragment>
   </Hero>
 
@@ -49,73 +51,74 @@ const meta = {
   <!-- Features Widget *************** -->
 
   <Features
-    highlight="Features"
-    title="What you get with AstroWind"
-    subtitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae."
+    highlight="SERVICIOS"
+    title="Descubre los servicios de Asesoria Americana y Taxline Services"
+    subtitle="Con más de 25 años de experiencia en el mismo lugar y reconocidos en la zona de Wheaton, Baltimore y ahora en Gaithersburg, Maryland, ofrecemos una amplia gama de servicios para satisfacer tus necesidades:"
     items={[
       [
         {
-          title: 'Astro + Tailwind CSS Integration',
+          title: 'Bodas a Domicilio',
           description:
-            'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-          icon: 'tabler:brand-tailwind',
+            'Ofrecemos un servicio único que permite a los prometidos tener un momento especial, eligen el lugar y nosotros oficiamos la boda.',
+          icon: 'tabler:heart',
         },
         {
-          title: 'Ready-to-use Components',
+          title: 'Agente Autorizado por MVA',
           description:
-            'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-          icon: 'tabler:components',
+            'Somos un agente autorizado por el MVA (Motor Vehicle Administration), te ayudamos con todo lo necesario.',
+          icon: 'tabler:car',
         },
         {
-          title: 'Best Practices',
+          title: 'Taxes Personales y Corporativos',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:list-check',
+            'Profesionales capacitados listos para ayudarte con tus impuestos personales y corporativos.',
+          icon: 'tabler:briefcase',
         },
       ],
       [
         {
-          title: 'Excellent Page Speed',
+          title: 'Notariado Publico',
           description:
-            'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-          icon: 'tabler:rocket',
+            'Contamos con el servicio de Notario Público, para autenticar documentos y otras funciones.',
+          icon: 'tabler:file-text',
         },
         {
-          title: 'Search Engine Optimization (SEO)',
+          title: 'Boletos de Avion',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:arrows-right-left',
+            'Tenemos nuestra propia agencia de viajes, te ayudamos a llegar a cualquier parte del mundo.',
+          icon: 'tabler:plane',
         },
         {
-          title: 'Open to new ideas and contributions',
+          title: 'Payroll - Planillas de Pago',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:bulb',
+            'Administramos las planillas de pago (payroll), manteniendo el control de los pagos para el éxito de tu empresa.',
+          icon: 'tabler:businessplan',
         },
       ],
-    ]}
+    ]
+    }
   />
 
   <!-- Content Widget **************** -->
 
   <Content
-    highlight="Inside template"
-    title="And what's inside? ..."
+    highlight="Sobre Nosotros"
+    title="Conoce más acerca de Asesoría Americana y Taxline Services ..."
     items={[
       {
-        title: 'Per ei quaeque sensibus',
+        title: 'Nuestra Historia',
         description:
-          'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
+          'Asesoría Americana y Taxline Services nació en el año <b>1998</B>. Desde entonces, nos hemos comprometido a ofrecer los mejores servicios a nuestros clientes, ayudándoles a navegar a través de diversas situaciones y desafíos.',
       },
       {
-        title: 'Cu imperdiet posidonium sed',
+        title: 'Nuestra Misión',
         description:
-          'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
+          'Nuestra misión es <b>ayudar a resolver con prontitud y eficiencia</b>. Nos esforzamos por brindar el mejor servicio posible, siempre teniendo en cuenta las necesidades individuales de cada cliente.',
       },
       {
-        title: 'Nulla omittam sadipscing mel ne',
+        title: 'Reconocimientos',
         description:
-          'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
+          'Hemos tenido el honor de ser reconocidos en la zona de Wheaton, Baltimore y ahora en Gaithersburg, Maryland por <b>nuestra dedicación y compromiso con la excelencia</b> en el servicio.',
       },
     ]}
     image={{
@@ -123,229 +126,184 @@ const meta = {
       alt: 'Colorful Image',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ad vix debet docendi</h3>
-      Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod
-      tacimates.
-    </Fragment>
-  </Content>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Compromiso con la Calidad</h3>
+    En Asesoría Americana y Taxline Services, buscamos superar las expectativas de nuestros clientes en cada oportunidad, trabajando con profesionalismo y un alto sentido de responsabilidad.
+  </Fragment>
+</Content>
 
-  <!-- Content Widget **************** -->
+ <!-- Steps Widget ****************** -->
 
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/vintage.jpg'),
-      alt: 'Vintage Image',
-    }}
-  />
+<Steps
+title="Requisitos para tu cita en Asesoría Americana y Taxline Services."
+items={[
+  {
+    title: 'Paso 1: <span class="font-medium">Preparación</span>',
+    description:
+      'Recuerda traer tu máscara y preferiblemente asiste solo. También necesitarás una copia de la declaración de impuestos del año anterior.',
+    icon: 'tabler:mask',
+  },
+  {
+    title: 'Paso 2: <span class="font-medium">Documentos</em>',
+    description:
+      'No olvides traer todos tus documentos: Documento de Identidad (ID), Formulario W2, Formulario 1099, Formulario 1095 (seguro médico), 1099K y una lista de gastos detallada.',
+    icon: 'tabler:files',
+  },
+  {
+    title: 'Paso 3: <span class="font-medium">Información Adicional</span>',
+    description:
+      'Si es necesario, trae un cheque en blanco (para tu número de cuenta bancaria). Si estás casado(a) o tienes hijos, necesitarás la misma información del Paso 2 para ellos.',
+    icon: 'tabler:info-circle',
+  },
+  {
+    title: 'Listo!',
+    icon: 'tabler:check',
+  },
+]}
+image={{
+  src: import('~/assets/images/creativity.jpg'),
+  alt: 'Steps image',
+}}
+/>
 
-  <!-- Steps Widget ****************** -->
 
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula.',
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</em>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/creativity.jpg'),
-      alt: 'Steps image',
-    }}
-  />
-
-  <!-- Features2 Widget ************** -->
+  <!-- Testimonials Widget ************** -->
 
   <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    highlight="Components"
+    title="LO QUE DICEN NUESTROS CLIENTES"
+    subtitle="Testimonios sobre los servicios"
     items={[
       {
-        title: 'Headers',
+        title: 'Antonio Olvera',
         description:
-          'In general, Headers contain information that makes it easier for visitors to interact with the website.',
-        icon: 'flat-color-icons:template',
+          'Llevo 12 años haciendo mis impuestos aquí. Son amables y profesionales.',
+        icon: 'fluent:person-16-filled',
       },
       {
-        title: 'Heros',
+        title: 'Orxan Abdullah',
         description:
-          'If you want your website to get more than its fair share of visitors, the Hero section needs to be stellar.',
-        icon: 'flat-color-icons:gallery',
+          'Best service in Maryland! You can trust and fix all your problems about tax with Mr. Jose! Thank you sir for your best service!',
+        icon: 'fluent:person-16-filled',
       },
       {
-        title: 'Features',
+        title: 'Leslie Rojas-Bullock',
         description:
-          'Display your product in action and how the Features actually create a solution for your target customer.',
-        icon: 'flat-color-icons:todo-list',
+          'Amazing service! Been a customer for over 19 years. The professional and friendly staff always ready to assist.',
+        icon: 'fluent:person-16-filled',
       },
       {
-        title: 'Content',
+        title: 'Ashley Cruz',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:document',
+          'This is my second year having Stephany do my taxes & I will most definitely be returning. Not only does she make herself available virtually but she communicates everything she’s doing & makes sure you’re getting as much as possible back.',
+        icon: 'fluent:person-16-filled',
       },
       {
-        title: 'Call-to-Action',
+        title: 'Melanie Villanueva',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:advertising',
+          'I’ve been doing my taxes with Stephany for 3 years now and every year she exceeds my expectations! She gets everything done so quickly and answers every question that I have. I’m so happy to be her client!!!',
+        icon: 'fluent:person-16-filled',
       },
       {
-        title: 'Pricing',
+        title: 'jamie Fuentes',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:currency-exchange',
+          'This was my first year having Stephanie do my taxes and let me just say, she is not only a good communicator and very responsive, she also takes her time with you and makes sure you get a good value back. She’s very friendly, and helpful! I recommend working with her every year!! Definitely will be returning. Thank you Steph!',
+        icon: 'fluent:person-16-filled',
       },
       {
-        title: 'Testimonial',
+        title: 'Kean Nguyen',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:voice-presentation',
+          'Worked with Stephany, and she was able to help me out with my taxes. Got me a quote very quickly and submitted everything in less than a few hours! Steph was very nice and professional, and she gets the job done! 100% would come back to them in the future.',
+        icon: 'fluent:person-16-filled',
       },
       {
-        title: 'Contact',
+        title: 'Martinez Family',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:business-contact',
+          'Last year my husband & I filled out taxes here because we were lost, originally we were suppose to go to another woman & when we asked if it was them they just brushed it off & said we can just fill with them.',
+        icon: 'fluent:person-16-filled',
       },
-      {
-        title: 'Footers',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'icon-park:page-template',
-      },
+      
     ]}
   />
 
-  <!-- HighlightedPosts Widget ******* -->
-
-  <LatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-    postIds={[
-      'get-started-website-with-astro-tailwind-css.md',
-      'how-to-customize-astrowind-to-your-brand.md',
-      'useful-resources-to-create-websites.md',
-      'astrowind-template-in-depth.md',
-    ]}
-  />
+  
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
+    title="Preguntas Frecuentes"
+    subtitle="Preguntas más frecuentes sobre nuestros servicios y procesos. Estamos aquí para aclarar cualquier duda que puedas tener."
     highlight="FAQs"
     items={[
       [
         {
-          question: 'What do I need to start?',
+          question: '¿Qué necesito para empezar a trabajar con Asesoria Americana?',
           answer:
-            'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+            'Para empezar a trabajar con nosotros, necesitarás proporcionar información relevante sobre tus ingresos, gastos y otros detalles financieros. Cada caso es único, por lo que es mejor que nos contactes directamente para que podamos ofrecerte una lista detallada de lo que necesitarás.',
         },
         {
-          question: 'How to install the Astro + Tailwind CSS template?',
+          question: '¿Cómo puedo obtener un ITIN?',
           answer:
-            "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
+            "En Asesoria Americana, podemos ayudarte con la solicitud y/o renovación de tu número de impuestos federales, conocido como 'ITIN'. Necesitarás cierta documentación, incluyendo tu identificación y otros documentos. Contáctanos para más detalles.",
         },
         {
-          question: "What's something that you don't understand?",
+          question: '¿Ofrecen servicios de contabilidad para empresas?',
           answer:
-            "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+            "Sí, contamos con profesionales capacitados que pueden ayudarte a llevar la contabilidad de tu empresa. Ofrecemos una variedad de servicios de contabilidad, desde la preparación de impuestos hasta la gestión del payroll.",
         },
       ],
       [
         {
-          question: "What's an example of when you changed your mind?",
+          question: '¿Qué servicios ofrecen para las bodas a domicilio?',
           answer:
-            "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+            "Nuestro servicio de bodas a domicilio permite a los prometidos tener un momento único. Puedes elegir el lugar: tu casa, un restaurante, incluso el patio de tu casa. Sólo tienes que elegir el día y la hora, y nosotros visitaremos para oficiar la boda.",
         },
         {
-          question: 'What is something that you would like to try again?',
+          question: '¿Cómo funciona su servicio de agencia de viajes?',
           answer:
-            "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+            "En Asesoria Americana, ofrecemos servicios de agencia de viajes. Podemos ayudarte a llegar a cualquier parte del mundo. Compra tu boleto con nosotros y tendrás el mejor respaldo posible en tu próximo viaje, ya sea de placer o de negocios.",
         },
         {
-          question: 'If you could only ask one question to each person you meet, what would that question be?',
+          question: '¿Qué servicios ofrecen como agente autorizado por el MVA?',
           answer:
-            "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+            "Como agente autorizado por el MVA (Motor Vehicle Administration), podemos ayudarte con varios trámites relacionados con tu vehículo. Por favor, ponte en contacto con nosotros para más detalles sobre estos servicios.",
+        },
+        {
+          question: '¿Ofrecen algún tipo de asesoramiento en impuestos personales y corporativos?',
+          answer:
+            "Sí, ofrecemos asesoramiento tanto en impuestos personales como corporativos. Nuestros profesionales capacitados están disponibles para ayudarte con tus impuestos, ya sean personales o de empresa.",
         },
       ],
     ]}
   />
 
-  <!-- Stats Widget ****************** -->
 
-  <Stats
+    <!-- Stats Widget ****************** -->
+
+    <Stats
     items={[
-      { name: 'Downloads', value: '132K' },
-      { name: 'Stars', value: '24.8K' },
-      { name: 'Forks', value: '10.3K' },
-      { name: 'Users', value: '48.4K' },
+      { name: 'Años de Excelencia', value: '25+' },
+      { name: 'Bodas Oficiadas', value: '1000+' },
+      { name: 'Asistencias en Declaraciones de Impuestos', value: '10K+' },
+      { name: 'Clientes Satisfechos', value: '20K+' },
     ]}
   />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
+  
+    <!-- CallToAction Widget *********** -->
+  
+    <CallToAction
     callToAction={{
-      text: 'Get template',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:download',
+      text: 'Contáctenos',
+      href: getPermalink('/landing/startup'), // Replace this with your actual contact page link
+      icon: 'tabler:phone',
     }}
-  >
+    >
     <Fragment slot="title">
-      Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      Asesoría Americana <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">y Taxline Services</span>
     </Fragment>
-
+  
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Sirviendo por más de 25 años en Wheaton, Baltimore y Gaithersburg, Maryland. <br class="hidden md:inline" />Hacemos tus sueños realidad.
     </Fragment>
-  </CallToAction>
+    </CallToAction>
+  
 </Layout>
