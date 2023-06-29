@@ -3,7 +3,7 @@ import defaultImage from './assets/images/default.png';
 const CONFIG = {
   name: 'Asesoria Americana',
 
-  origin: 'taxlineandservices.com',
+  origin: 'https://taxlineandservices.com',
   basePathname: '/',
   trailingSlash: false,
 
