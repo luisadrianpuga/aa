@@ -1,4 +1,4 @@
-import defaultImage from './assets/images/default.png';
+import defaultImage from './assets/images/AA_LogoNew.png';
 
 const CONFIG = {
   name: 'Asesoria Americana',
