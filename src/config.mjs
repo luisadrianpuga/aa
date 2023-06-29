@@ -3,7 +3,7 @@ import defaultImage from './assets/images/default.png';
 const CONFIG = {
   name: 'Asesoria Americana',
 
-  origin: 'https://iridescent-gnome-57ea85.netlify.app',
+  origin: 'taxlineandservices.com',
   basePathname: '/',
   trailingSlash: false,
 
