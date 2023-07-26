@@ -7,8 +7,27 @@ import { headerData } from '~/data';
 const meta = {
   title: "Servicios de Impuestos y Empresariales",
 };
+
 ---
+
 <Layout {meta}>
+  <script>
+    document.addEventListener('click', function(event) {
+      const clickedElement = event.target;
+      
+      if (clickedElement.matches('[data-address]')) {
+        const address = clickedElement.getAttribute('data-address');
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        
+        if (isIOS) {
+          window.open('https://maps.apple.com/?q=' + encodeURIComponent(address), '_blank');
+        } else {
+          window.open('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address), '_blank');
+        }
+      }
+    });
+    </script>
+    
   <Fragment slot="header">
     <Header
       {...headerData}
@@ -39,39 +58,39 @@ const meta = {
 
   <Steps2
   title="Siempre estamos listos para atenderte"
-  subtitle="En temporada alta de impuestos Asesoria Americana y Taxline Services tiene abierta las lineas de teléfono para atenderte desde las 9 de la mañana hasta las 9 de la noche, incluyendo sábados y domingos."
+  subtitle="Siempre estamos listos para atenderte. Estamos comprometidos a brindarte el mejor servicio y responder a todas tus consultas de impuestos de manera oportuna. ¡Esperamos hablar contigo pronto!"
   
   items={[
     {
       title: 'Dirección de Wheaton',
-      description: '11230-B Grandview Ave #2, Wheaton, MD 20902',
+      description: '<span data-address="11230-B Grandview Ave #2, Wheaton, MD 20902">11230-B Grandview Ave #2, Wheaton, MD 20902 <small style="font-size: 6px;">(Haz clic para abrir en mapas)</small></span>',
     },
     {
       title: 'Dirección Baltimore',
-      description: '3825 S Hanover St, Baltimore, Maryland 21225',
+      description: '<span data-address="3825 S Hanover St, Baltimore, Maryland 21225">3825 S Hanover St, Baltimore, Maryland 21225 <small style="font-size: 6px;">(Haz clic para abrir en mapas)</small></span>',
     },
     {
       title: 'Correo Electrónico',
-      description: 'taxes@asesoriaamericana.com',
+      description: '<a href="mailto:asesoriaamericana1@gmail.com">asesoriaamericana1@gmail.com</a>',
     },
     {
       title: 'Telefono Wheaton',
-      description: '+1 (301)-946-4440',
+      description: '<a href="tel:+14432058462">+1 (443) 205-8462</a> - <span style="font-size: 12px;">Haz clic para llamar</span>',
     },
     {
       title: 'Telefono Baltimore',
-      description: '+1 (443) 205-8462',
+      description: '<a href="tel:+14432058462">+1 (443) 205-8462</a> - <span style="font-size: 12px;">Haz clic para llamar</span>',
     },
     {
     "title": "Horarios",
     "description": `
-      Lunes: 9 AM–7 PM <br />
-      Martes: 9 AM–7 PM <br />
-      Miércoles: 9 AM–7 PM <br />
-      Jueves: 9 AM–7 PM <br />
-      Viernes: 9 AM–7 PM <br />
-      Sábado: 9 AM–4 PM <br />
-      Domingo: 10 AM–4 PM <br />
+      Lunes: 10 AM–4 PM <br />
+      Martes: 10 AM–4 PM <br />
+      Miércoles: 10 AM–4 PM <br />
+      Jueves: 10 AM–4 PM <br />
+      Viernes: 10 AM–4 PM <br />
+      Sábado: 11 AM–5 PM <br />
+      Domingo: Cerrado <br />
     `
   },
   ]}

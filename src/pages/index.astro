@@ -4,8 +4,10 @@ import Layout from '~/layouts/PageLayout.astro';
 import { getPermalink, getBlogPermalink, getAsset } from '~/utils/permalinks.ts';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
+import Instagram from '~/components/widgets/instagram.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Services_new.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import LatestPosts from '~/components/blog/LatestPosts.astro';
@@ -47,54 +49,76 @@ const meta = {
 
   <!-- Features Widget *************** -->
 
-  <Features
-    highlight="SERVICIOS"
-    title="Descubre los servicios de Asesoria Americana y Taxline Services"
-    subtitle="Con más de 25 años de experiencia en el mismo lugar y reconocidos en la zona de Wheaton, Baltimore y ahora en Gaithersburg, Maryland, ofrecemos una amplia gama de servicios para satisfacer tus necesidades:"
+  <Features3
+    title="Servicios"
+    subtitle="Testimonios sobre los servicios"
     items={[
-      [
-        {
-          title: 'Bodas a Domicilio',
-          description:
-            'Ofrecemos un servicio único que permite a los prometidos tener un momento especial, eligen el lugar y nosotros oficiamos la boda.',
-          icon: 'tabler:heart',
-        },
-        {
-          title: 'Agente Autorizado por MVA',
-          description:
-            'Somos un agente autorizado por el MVA (Motor Vehicle Administration), te ayudamos con todo lo necesario.',
-          icon: 'tabler:car',
-        },
-        {
-          title: 'Taxes Personales y Corporativos',
-          description:
-            'Profesionales capacitados listos para ayudarte con tus impuestos personales y corporativos.',
-          icon: 'tabler:briefcase',
-        },
-      ],
-      [
-        {
-          title: 'Notariado Publico',
-          description:
-            'Contamos con el servicio de Notario Público, para autenticar documentos y otras funciones.',
-          icon: 'tabler:file-text',
-        },
-        {
-          title: 'Boletos de Avion',
-          description:
-            'Tenemos nuestra propia agencia de viajes, te ayudamos a llegar a cualquier parte del mundo.',
-          icon: 'tabler:plane',
-        },
-        {
-          title: 'Payroll - Planillas de Pago',
-          description:
-            'Administramos las planillas de pago (payroll), manteniendo el control de los pagos para el éxito de tu empresa.',
-          icon: 'tabler:businessplan',
-        },
-      ],
-    ]
+      {
+        "title": 'Taxes Personales y Corporativos',
+        "description":
+          'Contamos con profesionales capacitados que pueden ayudarte con tus impuestos (taxes) personales y los de tu empresa.',
+        "imageUrl": 'http://taxlineandservices.live-website.com/wp-content/uploads/2021/01/2-1024x585.png',
+        
+      },
+      {
+        "title": "Contabilidades de Negocios",
+        "description": "Nuestro equipo de profesionales puede ayudarte con todos los aspectos contables de tu negocio.",
+        "imageUrl": "https://github.com/luisadrianpuga/image_hosting/blob/main/1.png?raw=true"
+    },
+    {
+        "title": "Tramitamos Tu 1099",
+        "description": "Brindamos asistencia con la tramitación de tu formulario 1099.",
+        "imageUrl": "https://github.com/luisadrianpuga/image_hosting/blob/main/3.png?raw=true"
+    },
+    {
+        "title": "Bodas a Domicilio",
+        "description": "Somos oficiantes de bodas autorizados por el Estado de Maryland para celebrar tu boda civil en el lugar de tus decidas, pais, playa, tu hogar, en donde tú decidas, con honorarios justos a tu medida.",
+        "imageUrl": "http://taxlineandservices.live-website.com/wp-content/uploads/2021/01/10-1024x585.png"
+    },
+    {
+        "title": "Apertura y Cierre de Negocios",
+        "description": "Puedes contar con nosotros para asesorarte en el proceso de apertura y cierre de tu negocio.",
+        "imageUrl": "http://taxlineandservices.live-website.com/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-06-at-10.12.31-AM-1-300x200.jpeg"
+    },
+    {
+        "title": "Nomina Payroll",
+        "description": "Ofrecemos servicios de nómina para garantizar que tus empleados sean pagados a tiempo y de forma precisa.",
+        "imageUrl": "http://taxlineandservices.live-website.com/wp-content/uploads/2021/01/4-1024x585.png"
+    },
+    {
+        "title": "Servicio de Notario Publico",
+        "description": "En Asesoria Americana y Taxline Services contamos con el servicio de Notario Público.",
+        "imageUrl": "http://taxlineandservices.live-website.com/wp-content/uploads/2021/01/9-1024x585.png"
+    },
+    {
+        "title": "Tramitamos o Renovamos Tu Numero de ITIN",
+        "description": "En Asesoria Americana y Taxline Services podemos ayudarte con la solicitud y/o renovación de tu numero de impuestos federales “ITIN”.",
+        "imageUrl": "http://taxlineandservices.live-website.com/wp-content/uploads/2021/01/2-1024x585.png"
+    },
+    {
+        "title": "Solicitud y Tramite de Renovación del TPS",
+        "description": "Brindamos asesoría para la solicitud y trámite de renovación del Estatus de Protección Temporal (TPS).",
+        "imageUrl": "https://github.com/luisadrianpuga/image_hosting/blob/main/2.png?raw=true"
+    },
+    {
+        "title": "Poderes y Autorizaciones para Salida del País de Menores de Edad",
+        "description": "Ofrecemos asistencia con los trámites necesarios para la salida del país de menores de edad.",
+        "imageUrl": "http://taxlineandservices.live-website.com/wp-content/uploads/2016/02/Asesoria-Web-Post-1024x585.png"
+    },
+    {
+        "title": "Agente Autorizado por el MVA",
+        "description": "Somos agente autorizado por el MVA (Motor Vehicle Administration). La licencia de conducir es el documento más importante de identificación dentro de los Estados Unidos y nosotros estamos autorizados para poder ayudarte.",
+        "imageUrl": "http://taxlineandservices.live-website.com/wp-content/uploads/2021/01/7-1024x585.png"
+    },
+    {
+        "title": "Creación de Publicidad para Tus Redes Sociales, Logos, Paginas Web, Tarjetas de Presentacion y Mucho Mas",
+        "description": "Te ayudamos a crear una imagen fuerte y coherente de tu negocio en línea, a través de publicidad, diseño de logotipos, desarrollo de sitios web y más.",
+        "imageUrl": "https://github.com/luisadrianpuga/image_hosting/blob/main/4.png?raw=true"
     }
-  />
+]}
+/>
+
+
 
   <!-- Content Widget **************** -->
 
@@ -137,9 +161,10 @@ items={[
   {
     title: 'Paso 1: <span class="font-medium">Preparación</span>',
     description:
-      'Recuerda traer tu máscara y preferiblemente asiste solo. También necesitarás una copia de la declaración de impuestos del año anterior.',
+      'Para satisfacer tus necesidades específicas, por favor envía un correo electrónico o llama a la oficina para programar una cita.',
     icon: 'tabler:mask',
   },
+
   {
     title: 'Paso 2: <span class="font-medium">Documentos</em>',
     description:
@@ -285,8 +310,7 @@ image={{
     ]}
   />
   
-    <!-- CallToAction Widget *********** -->
-  
+
     <CallToAction
     callToAction={{
       text: 'Contáctanos',
@@ -298,7 +322,7 @@ image={{
       Asesoría Americana y Taxline Services</span>
     </Fragment>
     <Fragment slot="subtitle">
-      Sirviendo por más de 25 años en Wheaton, Baltimore y Gaithersburg, Maryland. <br class="hidden md:inline" />Hacemos tus sueños realidad.
+      Sirviendo por más de 25 años en Wheaton y Baltimore Maryland. <br class="hidden md:inline" />
     </Fragment>
     </CallToAction>
   
