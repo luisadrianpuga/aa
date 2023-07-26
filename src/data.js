@@ -81,6 +81,6 @@ export const footerData = {
     
   ],
   footNote: `
-    Made by Luis Puga · All rights reserved.
+    © 2023 Asesoría Americana. All right reserved
   `,
 };
