@@ -19,9 +19,16 @@ const {
   items = [],
 } = Astro.props;
 ---
-<section class="relative">
+<section id="features"  class="relative">
+  
   <div class="relative max-w-7xl dark:bg-slate-800 mx-auto px-4 sm:px-6">
     <div class="dark:bg-slate-800 py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
+      <div class="mb-8 md:mx-auto text-center max-w-3xl">
+        {title && (
+          <h4 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading" set:html={title} />
+        )}
+        
+      </div>
       <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 my-12 dark:text-white items-stretch">
         {
           items.map(({ title, description, imageUrl }) => (
